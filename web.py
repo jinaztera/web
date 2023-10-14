@@ -79,11 +79,11 @@ with st.sidebar:
     else:
         file_name = f"{year}_{grade}_{month}_{subject}_{number}"
     
-    # if st.button('조회'):
-if file_name + ".png" not in os.listdir("image"):
-    tab1.title("준비중입니다")
-else:
-    tab1.image("image/" + file_name + ".png")
+    if st.button('조회'):
+        if file_name + ".png" not in os.listdir("image"):
+            tab1.title("곧 업데이트 됩니다.")
+        else:
+            tab1.image("image/" + file_name + ".png")
 
 # print(file_name)   
 # hello world
